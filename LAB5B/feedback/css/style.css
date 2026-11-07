@@ -1,0 +1,149 @@
+/* Course Feedback - one stylesheet for all pages */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f3f5f8;
+  color: #222;
+}
+
+/* Header */
+.site-header {
+  background: #2e5c8a;
+  color: #fff;
+  text-align: center;
+  padding: 22px 16px 16px;
+}
+.site-header h1 { margin: 0; font-size: 26px; }
+.site-header p  { margin: 6px 0 0; opacity: 0.85; }
+
+/* Menu */
+.menu {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background: #23476b;
+}
+.menu a {
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 20px;
+}
+.menu a:hover  { background: rgba(255,255,255,0.12); }
+.menu a.active { background: #f3f5f8; color: #23476b; font-weight: bold; }
+
+/* Content */
+.container {
+  max-width: 980px;
+  margin: 24px auto;
+  padding: 24px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+h2 { margin-top: 0; color: #2e5c8a; }
+h3 { color: #2e5c8a; margin-top: 28px; }
+a  { color: #2e5c8a; }
+.hint  { color: #666; font-size: 14px; }
+.req   { color: #b00020; }
+.muted { color: #999; }
+
+/* Form */
+.field { margin-bottom: 16px; }
+.field > label { display: block; font-weight: bold; margin-bottom: 5px; }
+input[type=text], select, textarea {
+  width: 100%;
+  max-width: 460px;
+  padding: 9px 10px;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: inherit;
+}
+textarea { max-width: 100%; }
+.invalid { border-color: #b00020 !important; background: #fff7f7; }
+.error {
+  display: block;
+  color: #b00020;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+fieldset.ratings {
+  border: 1px solid #d6dde6;
+  border-radius: 6px;
+  padding: 12px 16px 4px;
+  margin: 0 0 16px;
+}
+fieldset.ratings legend { font-weight: bold; padding: 0 6px; }
+.rating-row { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; }
+.rating-label { min-width: 150px; font-weight: bold; }
+.rating-options { display: flex; gap: 14px; }
+.radio { cursor: pointer; }
+.rating-row .error { flex-basis: 100%; margin-top: 0; }
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background: #2e5c8a;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn:hover { background: #23476b; }
+
+/* Messages */
+.msg { padding: 10px 14px; border-radius: 4px; margin-bottom: 16px; }
+.msg.success { background: #e6f4ea; color: #1e6b34; border: 1px solid #b7dfc3; }
+.msg.error   { background: #fdecea; color: #8a1c1c; border: 1px solid #f5c2c0; }
+.msg.error .error { color: #8a1c1c; }
+.msg.info    { background: #eef4fb; color: #23476b; border: 1px solid #c9dcf0; }
+
+/* Summary filter */
+.filter { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 18px; }
+.filter select { width: auto; }
+
+/* Average cards */
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 14px; }
+.card {
+  background: #f6f9fc;
+  border: 1px solid #dde5ee;
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+}
+.card.overall { background: #eaf1f9; border-color: #b9cde3; }
+.card-title { color: #555; font-size: 14px; }
+.card-num   { font-size: 32px; font-weight: bold; color: #2e5c8a; margin: 6px 0; }
+
+/* Rating labels */
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: bold;
+}
+.badge.excellent { background: #d7f0de; color: #1e6b34; }
+.badge.good      { background: #dbe9f8; color: #1f4e79; }
+.badge.fair      { background: #fdf1d3; color: #8a5a00; }
+.badge.poor      { background: #fadad8; color: #8a1c1c; }
+
+/* Tables */
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th, td { padding: 9px 10px; border-bottom: 1px solid #e3e3e3; text-align: left; vertical-align: top; }
+th { background: #eef2f7; }
+td.num { text-align: center; }
+
+/* Footer */
+.site-footer { text-align: center; color: #777; font-size: 13px; padding: 18px; }
+
+@media (max-width: 600px) {
+  .container { margin: 12px; padding: 16px; }
+  .rating-label { min-width: 100%; }
+}
